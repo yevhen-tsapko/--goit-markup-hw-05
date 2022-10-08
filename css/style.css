@@ -12,6 +12,30 @@ body {
   letter-spacing: 0.03em;
   background-color: #ffffff;
 }
+p,
+h1,
+h2,
+h3,
+ {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding-left: 0;
+}
+button {
+  cursor: pointer;
+  border-radius: 4px;
+}
+address {
+  font-style: normal;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 h1,
 h2,
 h3,
@@ -21,9 +45,6 @@ p {
 }
 .list {
   list-style: none;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
 }
 .link {
   text-decoration: none;
@@ -73,19 +94,20 @@ background-color: var(--accent-button-color);
 }
 /* header */
 .header {
-  margin-bottom: 94px;
   border-bottom: 1px solid 
   #ECECEC;}
+  .section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 .container {
    width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
   }
-  .header-container {
+.header-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-        }
+           }
 .header-nav {
   display: flex;
   align-items: center;
@@ -100,7 +122,6 @@ background-color: var(--accent-button-color);
 .logo-part {
   color: var(--focus-color);
 }
-
 .header-list {
   display: flex;
   margin-left: 93px;
@@ -123,7 +144,8 @@ background-color: var(--accent-button-color);
 }
 .header-contacts {
   display: flex;
-  /* margin-left: 344px; */
+  margin-left: auto;
+
 }
 .header-contact {
   display: block;
@@ -140,18 +162,16 @@ background-color: var(--accent-button-color);
 }
 /* Hero */
 .hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  
   background-color: var(--accent-background-color);
   text-align: center;
 }
-.section {
-  margin-bottom: 94px;
-}
-.hero-container{
-  padding-bottom: 200px; 
-  padding-top: 200px; 
-}
+
 .hero-title {
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
+  width: 696px;
 
   font-weight: 900;
   font-size: 44px;
@@ -185,10 +205,9 @@ background-color: var(--accent-button-color);
 .benefits-list,
 .products-list {
   display: flex;
-  margin-bottom: 94px;
-    }
-.benefits-item {
-  }
+  gap: 30px;
+ }
+
 .benefits-title {
   margin-bottom: 10px;
 
@@ -203,63 +222,56 @@ background-color: var(--accent-button-color);
 }
 /* Products */
 
-.products-item:not(:last-child) {
-  margin-right: 30px;
-}
-.img-block {
-  display: block;
-}
+.doing {padding-top: 0;}
 /* Team */
 .team-background {
   background-color: #f5f4fa;
 }
-.container-team {
-  padding-top: 94px ;
-  padding-bottom: 94px ;
- }
+
 .team-list {display: flex;
  }
  .team-item {
-  padding-bottom: 30px;
-}
-.team-item:not(:last-child) {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 0px 0px 4px 4px;
+ }
+ .team-item:not(:last-child) {
   margin-right: 30px;
 }
-.team-title {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  font-weight: 500;
+.team-info {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
 }
+.team-title {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
 .team-text {
-  font-size: 16px;
-  line-height: 1.19;
-  text-align: center;
   color: var(--text-color);
 }
 /* footer */
 .footer {
   background-color: var(--accent-background-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
-.container-footer {
-     padding: 60px 15px;
- }
+
 .footer .logo {
   color: #fff;
 }
 .adress {margin-top: 20px;
-}
-.mail {
   font-style: normal;
   line-height: 1.71;
-  color: #ffffff;
+}
+.mail {
+    color: #ffffff;
 }
 .adress-link {
   margin-top: 9px;
-  font-style: normal;
-  line-height: 1.71;
+ 
   color: rgba(255, 255, 255, 0.6);
 }
 .mail:hover,
@@ -274,7 +286,7 @@ background-color: var(--accent-button-color);
   display: flex;
   justify-content: center;
 
-  margin-bottom: 34px;
+  margin-bottom: 50px;
   padding: 0;
 }
 
@@ -287,17 +299,17 @@ background-color: var(--accent-button-color);
 
 .portfolio-item {
   margin: 15px;
-  padding-bottom: 20px;
- }
- .bottom-line {
-  border-bottom: 1px solid #EEEEEE;}
-  
+  }
+   
 .filter-item:not(:last-child) {
   margin-right: 8px;
   } 
-
+.portfolio-info {
+  padding: 20px 24px;
+  border: 1px solid #EEEEEE;
+}
 .portfolio-title {
-  margin: 20px 0 4px;
+  margin-bottom:  4px;
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 18px;
@@ -305,7 +317,7 @@ background-color: var(--accent-button-color);
   letter-spacing: 0.06em;
 }
 .portfolio-text {
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
   font-size: 16px;
   line-height: 1.88;
   color: var(--text-color);
