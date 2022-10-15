@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
+    <header class="header">
       <div class="container header-container">
         <nav class="header-nav">
           <a href="./index.html" class="logo link"
@@ -39,21 +39,19 @@
         <div class="header-contacts">
           <a href="mailto:info@devstudio.com" class="header-contact link"
             >
-            <div class="contact-wrapper" >
-              <svg class="header-icon" width="16" height="12">
+            <svg class="header-icon" width="16" height="12">
                 <use href="./img/symbol-defs.svg#envelope"></use>
               </svg>
-              <p>info@devstudio.com</p>
-            </div></a
+              info@devstudio.com
+           </a
           >
           <a href="tel:+380961111111" class="header-contact link"
             >
-          <div class="contact-wrapper" >
-            <svg class="header-icon" width="10" height="16">
+                  <svg class="header-icon" width="10" height="16">
               <use href="./img/symbol-defs.svg#smartphone"></use>
             </svg>
-            <p>+38 096 111 11 11</p>
-          </div></a
+            +38 096 111 11 11
+          </a
         >
         </div>
       </div>
@@ -80,9 +78,9 @@
           </li>
         </ul>
   
-        <ul class="portfolio-list">
-          <li class="portfolio-item list">
-            <a href="" class="link"
+        <ul class="portfolio-list list">
+          <li >
+            <a class="portfolio-item link" href="" 
               ><img 
                 src="./img/portfolio-1.jpg"
                 alt="Співробітники фірми"
@@ -90,12 +88,13 @@
               />
               <div class="portfolio-info">
                 <h2 class="portfolio-title">Технокряк</h2>
-              <p class="portfolio-text">Веб-сайт</p></a
-            >
+              <p class="portfolio-text">Веб-сайт</p>
               </div>
+              </a
+              >
           </li>
-          <li class="portfolio-item list">
-            <a href="" class="link"
+          <li >
+            <a class="portfolio-item link" href="" 
               ><img 
                 src="./img/portfolio-2.jpg"
                 alt="Баскедболісти"
@@ -103,12 +102,12 @@
               />
              <div class="portfolio-info">
               <h2 class="portfolio-title">Постер New Orlean vs Golden Star</h2>
-              <p class="portfolio-text">Дизайн</p></a
-            >
-             </div>
+              <p class="portfolio-text">Дизайн</p>
+             </div></a
+             >
           </li>
-          <li class="portfolio-item list">
-            <a href="" class="link"
+          <li >
+            <a class="portfolio-item link" href="" 
               ><img 
                 src="./img/portfolio-3.jpg"
                 alt="Логотип ресторану"
@@ -120,8 +119,8 @@
              </div></a
              >
           </li>
-          <li class="portfolio-item list">
-            <a href="" class="link"
+          <li >
+            <a class="portfolio-item link" href="" 
               ><img  src="./img/portfolio-4.jpg" alt="Навушники" width="370" />
              <div class="portfolio-info">
               <h2 class="portfolio-title">Проєкт Prime</h2>
@@ -129,8 +128,8 @@
              </div></a
              >
           </li>
-          <li class="portfolio-item list">
-            <div href="" class="link">
+          <li >
+            <a href="" class="portfolio-item link">
               <img  src="./img/portfolio-5.jpg" alt="Коробочки" width="370" />
               <div class="portfolio-info">
               <h2 class="portfolio-title">Проєкт Boxes</h2>
@@ -139,8 +138,8 @@
               </p></div>
               </a>
           </li>
-          <li class="portfolio-item list">
-            <a href="" class="link">
+          <li >
+            <a href="" class="portfolio-item link">
               <img 
                 src="./img/portfolio-6.jpg"
                 alt="Екран компьютера"
@@ -152,8 +151,8 @@
               </div></a
             >
           </li>
-          <li class="portfolio-item list">
-            <a href="" class="link"
+          <li >
+            <a href="" class="portfolio-item link"
               ><img 
                 src="./img/portfolio-7.jpg"
                 alt="Сторінка журналу"
@@ -165,8 +164,8 @@
              </div></a
             >
           </li>
-          <li class="portfolio-item list">
-            <a href="" class="link"
+          <li >
+            <a href="" class="portfolio-item link"
               ><img  src="./img/portfolio-8.jpg" alt="Лейбл" width="370" />
               <div class="portfolio-info">
                 <h2 class="portfolio-title">Проєкт LAB</h2>
@@ -174,8 +173,8 @@
               </div></a
             >
           </li>
-          <li class="portfolio-item list">
-            <a href="" class="link">
+          <li >
+            <a href="" class="portfolio-item link">
               <img  src="./img/portfolio-9.jpg" alt="Ноутбук" width="370" />
              <div class="portfolio-info">
               <h2 class="portfolio-title">Growing Business</h2>
@@ -195,7 +194,7 @@
           >
           <address class="adress">
             <ul class="adress-list list">
-              <li>
+              <li class="adress-item">
                 <a
                   class="mail link"
                   href="https://goo.gl/maps/CPtrU1FHBa2aNyZL9"
@@ -204,12 +203,12 @@
                   >м. Київ, пр-т Лесі Українки, 26</a
                 >
               </li>
-              <li>
+              <li class="adress-item">
                 <a class="adress-link link" href="mailto:info@devstudio.com"
                   >info@devstudio.com</a
                 >
               </li>
-              <li>
+              <li class="adress-item">
                 <a class="adress-link link" href="tel:+380961111111"
                   >+38 096 111 11 11</a
                 >
@@ -218,31 +217,31 @@
           </address>
         </div>
         <div class="join">
-          <h2 class="join-title">Приєднуйтесь</h2>
+          <p class="join-title" >Приєднуйтесь</p>
           <ul class="social-list">
-            <li class="social-item list">
-              <a href="">
+            <li class="list">
+              <a class="social-item" href="">
                 <svg class="social-icon">
                   <use href="./img/symbol-defs.svg#instagram"></use>
                 </svg>
               </a>
             </li>
-            <li class="social-item list">
-              <a href="">
+            <li class="list">
+              <a class="social-item" href="">
                 <svg class="social-icon">
                   <use href="./img/symbol-defs.svg#twitter"></use>
                 </svg>
               </a>
             </li>
-            <li class="social-item list">
-              <a href="">
+            <li class="list">
+              <a class="social-item" href="">
                 <svg class="social-icon">
                   <use href="./img/symbol-defs.svg#facebook"></use>
                 </svg>
               </a>
             </li>
-            <li class="social-item list">
-              <a href="">
+            <li class="list">
+              <a class="social-item" href="">
                 <svg class="social-icon">
                   <use href="./img/symbol-defs.svg#linkedin"></use>
                 </svg>
