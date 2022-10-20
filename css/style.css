@@ -175,8 +175,9 @@ p {
     padding-top: 200px;
   padding-bottom: 200px;
   max-width: 1600px;
+  height: 600px;
   margin: 0 auto;
-   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4) 0%,  rgba(47, 48, 58, 0) 50%, rgba(47, 48, 58, 0.4) 100%),url(../img/img-hero.jpg);
+   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4) 0%,   rgba(47, 48, 58, 0.4) 100%),url(../img/img-hero.jpg);
  
   background-color: rgba(47, 48, 58);
   background-position: center;
@@ -305,11 +306,12 @@ p {
 .social-item:hover,
 .social-item:focus {
   background-color: var(--focus-color);
+  color: #fff;
 }
-.social-item:hover .social-icon,
+/* .social-item:hover .social-icon,
 .social-item:focus .social-icon {
   fill: #fff;
-}
+} */
 .social-icon {
   display: block;
   width: 20px;
@@ -343,12 +345,10 @@ p {
 }
 .client-link:hover,
 .client-link:focus {
+  color: var(--focus-color);
   border-color: var(--focus-color);
 }
-.client-link:hover .client-icon,
-.client-link:focus .client-icon {
-  fill: var(--focus-color);
-}
+
 
 /* footer */
 .footer {
