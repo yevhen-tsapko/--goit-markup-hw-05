@@ -5,6 +5,7 @@
   --accent-background-color: #2f303a;
   --accent-button-color: #188ce8;
   --icon-color: #afb1b8;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -51,6 +52,7 @@ p {
 }
 /* buttons */
 .hero-btn {
+  transition: background-color var(--transition) ;
   padding: 10px 32px;
 
   font-family: inherit;
@@ -64,13 +66,15 @@ p {
   background-color: var(--focus-color);
   border-style: none;
 
-  cursor: pointer;
 }
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: var(--accent-button-color);
 }
 .filter-button {
+  transition: background-color var(--transition),
+   color var(--transition),
+   box-shadow var(--transition) ;
   padding: 6px 22px;
 
   font-family: inherit;
@@ -83,8 +87,6 @@ p {
   color: var(--title-text-color);
   background-color: #f5f4fa;
   border-style: none;
-
-  cursor: pointer;
 }
 .filter-button.active,
 .filter-button:hover,
@@ -92,8 +94,8 @@ p {
   color: #fff;
   background: var(--focus-color);
 
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-}
+  box-shadow:  0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+ }
 /* header */
 .header {
   border-bottom: 1px solid #ececec;
@@ -135,6 +137,7 @@ p {
 
 .header-link,
 .header-contact {
+  transition:color var(--transition);
   padding: 32px 0;
   font-weight: 500;
   font-size: 14px;
@@ -167,12 +170,22 @@ p {
 .header-contact:focus .header-icon {
   fill: var(--focus-color);
 }
-.current {
+.current {position: relative;
   color: var(--focus-color);
+}
+.current::after {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: var(--focus-color);
+  border-radius: 2px;
 }
 /* Hero */
 .hero {
-    padding-top: 200px;
+  padding-top: 200px;
   padding-bottom: 200px;
   max-width: 1600px;
   height: 600px;
@@ -198,6 +211,57 @@ p {
   text-transform: uppercase;
   color: #ffffff;
 }
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+ 
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity var(--transition),
+  transform var(--transition);
+}
+.backdrop.is-hidden {
+  pointer-events: none;
+  transform: scale(0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition),
+  transform var(--transition);
+}
+.modal {position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) ;
+  min-width: 528px;
+min-height: 581px;
+background: #FFFFFF;
+box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+}
+.close-button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 30px;
+  height: 30px;
+
+  background-color: inherit;
+  background-image: url(../img/vector.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  padding: 0;
+}
+.close-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 /* Benefits */
 .visually-hidden {
   position: absolute;
@@ -236,23 +300,41 @@ p {
   height: 70px;
 }
 .benefits-title,
+.product-text,
 .join-title {
-  margin-bottom: 10px;
-
-  font-size: 14px;
+  color: #ffffff;
+    font-size: 14px;
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
 }
+.benefits-title
+ {color: inherit;
+  margin-bottom: 10px;}
+
 .benefits-text {
   line-height: 1.71;
   color: var(--text-color);
 }
 /* Products */
-
 .doing {
   padding-top: 0;
 }
+.products-item {
+  position: relative;
+}
+.product-text {
+  position: absolute;
+  bottom: 0;
+ 
+  width: 100%;
+  background: rgba(47, 48, 58, 0.8);
+   padding: 27px 0;
+ 
+text-align: center;
+
+}
+
 /* Team */
 .team-background {
   background-color: #f5f4fa;
@@ -262,8 +344,7 @@ p {
   display: flex;
 }
 .team-item {
- 
-  background-color: #fff;
+   background-color: #fff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -295,6 +376,7 @@ p {
   gap: 10px;
 }
 .social-item {
+  transition:background-color var(--transition);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -308,10 +390,7 @@ p {
   background-color: var(--focus-color);
   color: #fff;
 }
-/* .social-item:hover .social-icon,
-.social-item:focus .social-icon {
-  fill: #fff;
-} */
+
 .social-icon {
   display: block;
   width: 20px;
@@ -327,6 +406,7 @@ p {
 }
 
 .client-link {
+  transition:color var(--transition),  border-color var(--transition);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -373,9 +453,11 @@ p {
   margin-bottom: 9px;
 }
 .mail {
+  transition:color var(--transition);
   color: #ffffff;
 }
 .adress-link {
+  transition:color var(--transition);
     color: rgba(255, 255, 255, 0.6);
 }
 .mail:hover,
@@ -390,6 +472,7 @@ p {
   color: #ffffff;
 }
 .join .social-item {
+  transition:background-color var(--transition);
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
 }
@@ -405,7 +488,6 @@ p {
 .portfolio-filter {
   display: flex;
   justify-content: center;
-
   margin-bottom: 50px;
   padding: 0;
 }
@@ -420,18 +502,39 @@ p {
   padding: 0;
   }
   .portfolio-item {
+    width: 370px;
+    transition:box-shadow var(--transition);
     display: block;
    }
 
 .portfolio-item:hover,
 .portfolio-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
+  }
 
 .filter-item:not(:last-child) {
   margin-right: 8px;
 }
+.portfolio-item-description {
+ position: relative;
+ overflow: hidden;
 
+}
+.portfolio-description-text {
+  transition: transform var(--transition);
+  position: absolute;
+  top: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  background-color:  rgba(33, 150, 243, 0.9);
+  color: #ffffff;
+  font-size: 18px;
+  line-height: calc(28/18);
+}
+.portfolio-item:hover .portfolio-description-text,
+.portfolio-item:focus .portfolio-description-text{
+transform: translateY(-100%);
+}
 .portfolio-info {
   padding: 20px 24px;
   border: 1px solid #eeeeee;

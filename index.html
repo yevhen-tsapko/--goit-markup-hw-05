@@ -59,7 +59,8 @@
     <main>
       <section class="hero">
         <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-        <button type="button" class="hero-btn">Замовити послугу</button>
+        <button data-modal-open type="button" class="hero-btn">Замовити послугу</button>
+     
       </section>
       <section class="section">
         <div class="container">
@@ -121,12 +122,21 @@
           <ul class="products-list list">
             <li class="products-item list">
               <img src="img/box1.jpg" alt="Десктопна розробка" width="370" />
+              <p class="product-text">
+                Десктопні додатки
+              </p>
             </li>
             <li class="products-item list">
               <img src="img/box2.jpg" alt="Мобільна розробка" width="370" />
+              <p class="product-text">
+                Мобільні додатки
+              </p>
             </li>
             <li class="products-item list">
               <img src="img/box3.jpg" alt="Дизайн" width="370" />
+              <p class="product-text">
+                Дизайнерські рішення
+              </p>
             </li>
           </ul>
         </div>
@@ -400,5 +410,12 @@
         </div>
       </div>
     </footer>
+       <div data-modal class="backdrop is-hidden" >
+          <div class="modal">
+<button class="close-button" data-modal-close type="button">
+</button>
+          </div>
+        </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
